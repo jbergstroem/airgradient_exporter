@@ -23,7 +23,7 @@ type AirGradientMeasures struct {
 	Rco2            float64 `json:"rco2"`
 	TvocIndex       float64 `json:"tvocIndex"`
 	TvocRaw         float64 `json:"tvocRaw"`
-	NoxIndex        int     `json:"noxIndex"`
+	NoxIndex        float64 `json:"noxIndex"`
 	NoxRaw          float64 `json:"noxRaw"`
 	Boot            int     `json:"boot"`
 	BootCount       int     `json:"bootCount"`
@@ -287,7 +287,7 @@ func updateMetrics(m AirGradientMeasures) {
 	rhumCompensated.Set(m.RhumCompensated)
 	tvocIndex.Set(m.TvocIndex)
 	tvocRaw.Set(m.TvocRaw)
-	noxIndex.Set(float64(m.NoxIndex))
+	noxIndex.Set(m.NoxIndex)
 	noxRaw.Set(m.NoxRaw)
 	bootCount.Set(float64(m.BootCount))
 	ledModeInfo.WithLabelValues(m.LedMode).Set(1)
